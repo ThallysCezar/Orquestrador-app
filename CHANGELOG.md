@@ -3,6 +3,11 @@
 Formato: o que muda para quem usa. Datas só onde o histórico do código as confirma (o repositório do código começa em 24/10/2026;
 as versões 0.1 a 0.3 são anteriores a ele).
 
+## 0.6.3 (26/10/2026)
+- **Editor de notas dividindo a tela:** o editor lateral deixou de cobrir o canvas e agora empurra o canvas para o lado, para você
+  ver os dois ao mesmo tempo.
+- **Quebra de linha automática** no editor, com botão *Wrap* e atalho `Alt+Z`; os números de linha acompanham as linhas quebradas.
+
 ## 0.6.2 (26/10/2026)
 - **Ícone novo:** uma batuta ligando dois terminais, com formas mais grossas para continuar legível em tamanhos pequenos.
 - A verificação automática de atualizações agora acontece cerca de 3 segundos depois de abrir o app (antes, 20 s).
