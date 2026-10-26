@@ -8,6 +8,15 @@ as versões 0.1 a 0.3 são anteriores a ele).
   ver os dois ao mesmo tempo.
 - **Quebra de linha automática** no editor, com botão *Wrap* e atalho `Alt+Z`; os números de linha acompanham as linhas quebradas.
 
+## 0.7.0 (26/10/2026)
+- **Ícones novos:** todos os emojis da interface foram trocados por um único conjunto de ícones, no mesmo estilo e com a mesma
+  aparência no Windows e no Linux. As bolinhas de status (ligados, ociosos, parados) agora são desenhadas pelo app.
+- **Tema claro corrigido:** o comando que você aprova na fila estava quase invisível, e os botões Aprovar e Permitir, a barra superior,
+  os selos e vários menus também. Agora todos os textos têm contraste legível nos dois temas.
+- **Nome do agente visível no tema claro** (antes ficava escuro sobre o bloco escuro do terminal).
+- **Editor de notas:** a barra de status inferior ficou legível (o texto azul sobre azul sumia nos dois temas).
+- Tamanhos de letra e cantos arredondados padronizados em toda a interface (diferenças pequenas, de até 2 px).
+
 ## 0.6.2 (26/10/2026)
 - **Ícone novo:** uma batuta ligando dois terminais, com formas mais grossas para continuar legível em tamanhos pequenos.
 - A verificação automática de atualizações agora acontece cerca de 3 segundos depois de abrir o app (antes, 20 s).
