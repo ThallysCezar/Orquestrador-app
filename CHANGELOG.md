@@ -8,6 +8,14 @@ as versões 0.1 a 0.3 são anteriores a ele).
   ver os dois ao mesmo tempo.
 - **Quebra de linha automática** no editor, com botão *Wrap* e atalho `Alt+Z`; os números de linha acompanham as linhas quebradas.
 
+## 0.7.1 (26/10/2026)
+- **Controles de andar no canto inferior esquerdo:** o seletor de andar (com o número), o botão "+ Andar", a vista empilhada, o mapa
+  e o ajuste à tela agora ficam juntos numa barra no canto inferior esquerdo, no mesmo estilo da barra de ferramentas. A pílula do andar
+  saiu da barra superior.
+- Em janelas estreitas (abaixo de uns 1180 px) a barra de andares sobe para ficar acima da barra de ferramentas, sem cobrir os botões
+  Terminal e Nota.
+- Tema claro: o número do andar atual e os selos amarelos ficaram legíveis.
+
 ## 0.7.0 (26/10/2026)
 - **Ícones novos:** todos os emojis da interface foram trocados por um único conjunto de ícones, no mesmo estilo e com a mesma
   aparência no Windows e no Linux. As bolinhas de status (ligados, ociosos, parados) agora são desenhadas pelo app.
