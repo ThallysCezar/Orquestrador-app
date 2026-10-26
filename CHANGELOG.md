@@ -7,7 +7,6 @@ as versões 0.1 a 0.3 são anteriores a ele).
 - **Editor lateral de notas** em Markdown (código, prévia ou dividido; `Ctrl+S` salva). Avisa quando a nota está ligada a um
   arquivo `.md`, porque nesse caso o agente lê o arquivo, não o texto do editor.
 - Barra de espaço volta a ativar botões e links focados.
-- Script interno que repete o fluxo "mesclar branches de agentes → versão nova".
 
 ## 0.5.0 (26/10/2026)
 - Setas ortogonais com vértices arrastáveis, âncora automática ou manual em cada ponta e estilo de seta por workspace.

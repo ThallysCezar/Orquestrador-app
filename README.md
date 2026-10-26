@@ -1,8 +1,6 @@
 <p align="center">
-  <img src="assets/logo.png" alt="Orquestra" width="120" />
+  <img src="assets/logo.png" alt="Orquestra: Visual Agent Canvas" width="520" />
 </p>
-
-<h1 align="center">Orquestra</h1>
 
 <p align="center">
   Canvas visual para orquestrar agentes de código em <b>terminais reais</b>, com mensagens entre eles
@@ -10,26 +8,41 @@
 </p>
 
 <p align="center">
-  <i>Projeto pessoal de <a href="https://github.com/">Thallys Cézar</a> · Windows e Linux · em teste (pré-lançamento)</i>
+  <i>Projeto pessoal de <a href="https://github.com/ThallysCezar">Thallys Cézar</a> · Windows e Linux · em teste (pré-lançamento)</i>
+</p>
+
+<p align="center">
+  <img src="assets/demo.gif" alt="Aprovando uma mensagem e uma permissão na fila e organizando o canvas" width="900" />
+  <br />
+  <sub>Interface em modo de demonstração (dados simulados): aprovar uma mensagem e uma permissão na fila "Aguardando por mim" e organizar o canvas.</sub>
 </p>
 
 ---
 
-<!-- TODO: trocar por capturas reais (canvas com Maestro e agentes; fila "Aguardando por mim"; histórico/reprodução).
-     Salvar em assets/ e referenciar aqui. Um GIF curto de 20 s (Maestro delega, você aprova, o agente responde) vale mais que texto. -->
+## Como nasceu
+
+Eu queria administrar melhor os meus agentes de código. Já usava mais de uma CLI ao mesmo tempo e, na prática, virava o
+mensageiro entre terminais: copiando resposta de um, colando no outro. Procurei ferramentas, mas nenhuma era confiável
+o bastante e atendia tudo o que eu precisava.
+
+Então decidi criar a minha. A ideia foi juntar um pouco do que o **Maestri** faz com o jeito de trabalhar que a gente
+conhece do **Excalidraw** e do **Miro** (um canvas livre, com blocos e setas), e acrescentar a parte de **orquestração**:
+quem fala com quem, o que passa pela minha aprovação e o que fica registrado. Dessa mistura saiu o **Orquestra**. O nome
+não é dos melhores, mas foi com ele que a ideia começou, e ficou.
+
+Não fiz isso para vender nem para ser melhor do que nada: fiz por interesse meu e para atender às minhas necessidades,
+de um jeito mais **seguro** do que eu tinha à mão.
+
+O app foi feito junto com outras ferramentas, com agentes de IA: eu orquestrando e administrando as ideias e as decisões;
+na parte do código, revisando, testando e entendendo o que os agentes escreviam. As decisões de projeto estão
+registradas em [`docs/DECISOES.md`](docs/DECISOES.md).
 
 ## O que é
 
-Hoje rodar vários agentes de código (Claude Code, Antigravity, OpenCode) significa abrir várias janelas de terminal e
-fazer o papel de mensageiro entre elas. O **Orquestra** junta tudo em um **canvas**: cada agente é um terminal de verdade
-(o mesmo programa que você usaria na linha de comando), e você liga os blocos com **setas** para dizer quem pode falar
-com quem.
-
-Um agente especial, o **Maestro**, recebe o seu pedido e delega tarefas aos outros. Tudo o que um agente manda para
-outro vira uma **mensagem estruturada**, registrada em um banco local e, por padrão, **segurada na fila "Aguardando por
-mim"** até você aprovar, editar ou rejeitar.
-
-## Por que existe
+Cada agente (Claude Code, Antigravity, OpenCode) roda como um **terminal de verdade** dentro de um **canvas**, e você liga
+os blocos com **setas** para dizer quem pode falar com quem. Um agente especial, o **Maestro**, recebe o seu pedido e
+delega tarefas aos outros. Tudo o que um agente manda para outro vira uma **mensagem estruturada**, registrada em um banco
+local e, por padrão, **segurada na fila "Aguardando por mim"** até você aprovar, editar ou rejeitar.
 
 | Problema com vários terminais soltos | O que o Orquestra faz |
 |---|---|
@@ -71,7 +84,7 @@ de entrada). Detalhes em [`docs/DECISOES.md`](docs/DECISOES.md).
 
 ## Instalação
 
-Baixe o pacote da sua plataforma na página de **Releases** deste repositório.
+Baixe o pacote da sua plataforma na página de [**Releases**](../../releases) deste repositório.
 
 | Plataforma | Guia |
 |---|---|
@@ -93,7 +106,7 @@ quem trabalha é a CLI, com a **sua** conta e os **seus** limites de uso.
 - Ambiente mínimo para cada agente (sem variáveis de credenciais herdadas).
 - **Use só repositórios de teste.** O projeto ainda está em teste e agentes de código executam comandos de verdade.
 
-## Limitações conhecidas (honestas)
+## Limitações conhecidas
 
 - Em teste: usado e verificado principalmente no **Windows**. No Linux, só dentro do WSL2; instalação em máquina limpa
   ainda não foi verificada.
@@ -103,14 +116,7 @@ quem trabalha é a CLI, com a **sua** conta e os **seus** limites de uso.
 - Certificado autoassinado (veja acima). Sem atualização automática: atualizar é rodar o instalador novo por cima.
 - Sem licença definida por enquanto: o código-fonte **ainda não é aberto**.
 
-## Status e roteiro
+## Status
 
 Pré-lançamento. O histórico de versões está no [`CHANGELOG.md`](CHANGELOG.md).
-Próximos passos prováveis: logo definitiva, capturas e demonstração em vídeo, instalação em máquina limpa,
-Docker por agente, e a decisão de abrir o código (com licença).
-
-## Feito por
-
-Ideia, desenho e direção: **Thallys Cézar**. O código foi escrito com ajuda de agentes de IA (Claude Code e outros),
-sob revisão e teste humanos; o próprio Orquestra nasceu dessa forma de trabalhar. As decisões de projeto estão
-registradas em [`docs/DECISOES.md`](docs/DECISOES.md).
+Próximos passos prováveis: instalação em máquina limpa, Docker por agente e a decisão de abrir o código (com licença).
