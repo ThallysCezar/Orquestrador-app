@@ -19,6 +19,28 @@
 
 ---
 
+## Download
+
+<p align="center">
+  <a href="https://github.com/ThallysCezar/Orquestrador-app/releases">
+    <img src="https://img.shields.io/github/v/release/ThallysCezar/Orquestrador-app?include_prereleases&label=%C3%BAltima%20vers%C3%A3o&color=1a64f0&style=for-the-badge" alt="Última versão" />
+  </a>
+</p>
+
+| Plataforma | O que baixar na página da versão | Guia |
+|---|---|---|
+| **Windows** 10/11 (64 bits) | `Orquestra-Windows.zip` (instalador + certificado + passo a passo) | [`docs/instalacao-windows.md`](docs/instalacao-windows.md) |
+| **Linux** (testado só em Ubuntu 24.04 no WSL2) | `Orquestra-Linux.zip` (AppImage + passo a passo) | [`docs/instalacao-linux.md`](docs/instalacao-linux.md) |
+
+**[Baixar a última versão](https://github.com/ThallysCezar/Orquestrador-app/releases)**: a primeira da lista é a mais recente.
+Todas as versões anteriores, com as notas de cada uma, ficam na mesma página: [**Releases**](https://github.com/ThallysCezar/Orquestrador-app/releases).
+O que mudou em cada versão também está no [`CHANGELOG.md`](CHANGELOG.md).
+
+> Depois de instalada uma versão com atualização automática, o próprio app avisa quando sair uma versão nova e atualiza
+> com a sua confirmação (veja [Atualizações](#atualizações)).
+
+---
+
 ## Como nasceu
 
 Eu queria administrar melhor os meus agentes de código. Já usava mais de uma CLI ao mesmo tempo e, na prática, virava o
@@ -82,14 +104,7 @@ Duas regras de projeto sustentam o resto: **os agentes nunca conversam diretamen
 conteúdo das mensagens nunca é digitado no terminal** (só uma "cutucada" curta e fixa pede ao agente que leia a caixa
 de entrada). Detalhes em [`docs/DECISOES.md`](docs/DECISOES.md).
 
-## Instalação
-
-Baixe o pacote da sua plataforma na página de [**Releases**](../../releases) deste repositório.
-
-| Plataforma | Guia |
-|---|---|
-| Windows 10/11 (64 bits) | [`docs/instalacao-windows.md`](docs/instalacao-windows.md) |
-| Linux (testado só em Ubuntu 24.04 no WSL2) | [`docs/instalacao-linux.md`](docs/instalacao-linux.md) |
+## Requisitos e aviso do Windows
 
 **Você precisa de:** Git e pelo menos uma CLI de agente já instalada e logada na sua conta. O Orquestra só orquestra;
 quem trabalha é a CLI, com a **sua** conta e os **seus** limites de uso.
@@ -97,6 +112,15 @@ quem trabalha é a CLI, com a **sua** conta e os **seus** limites de uso.
 > **Sobre o aviso do Windows:** o instalador é assinado com um certificado **autoassinado** (não de uma empresa), então
 > o Windows mostra "editor desconhecido" até você confiar nele (o guia explica, e só faça se confiar em mim). Um certificado
 > comercial resolveria, mas é pago.
+
+## Atualizações
+
+A partir da versão que traz o recurso, o Orquestra **verifica sozinho** (ao abrir e a cada poucas horas) se existe uma versão
+nova nas Releases deste repositório. Quando existe, aparece um aviso com as opções **Baixar e instalar**, **Ver novidades** e
+**Depois**. Nada é instalado sem a sua confirmação, e o app confere a integridade (SHA-512) e a assinatura do instalador antes de
+executá-lo. Dá para desligar a verificação em *Configurações do app*.
+
+Instalações anteriores a esse recurso não se atualizam sozinhas: instale uma vez a versão nova manualmente.
 
 ## Segurança
 
