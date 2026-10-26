@@ -3,6 +3,10 @@
 Formato: o que muda para quem usa. Datas só onde o histórico do código as confirma (o repositório do código começa em 24/10/2026;
 as versões 0.1 a 0.3 são anteriores a ele).
 
+## 0.6.1 (26/10/2026)
+- Versão de teste do ciclo de atualização automática: não traz mudança de funcionalidade. Quem está na 0.6.0 deve receber o aviso
+  de versão nova e conseguir atualizar por dentro do app.
+
 ## 0.6.0 (26/10/2026)
 - **Atualização automática:** o app verifica as Releases deste repositório ao abrir e a cada poucas horas, e avisa quando há versão nova
   (**Baixar e instalar**, **Ver novidades**, **Depois**). Nada é baixado nem instalado sem a sua confirmação; o app confere a
