@@ -3,6 +3,13 @@
 Formato: o que muda para quem usa. Datas só onde o histórico do código as confirma (o repositório do código começa em 24/10/2026;
 as versões 0.1 a 0.3 são anteriores a ele).
 
+## 0.8.0 (26/10/2026)
+- **Pasta em formato de cartão:** cada pasta do canvas agora mostra o tipo (repositório Git, documentos ou Maestro), a subpasta de saída,
+  o **caminho real no disco** (com botões para copiar e abrir a pasta), os agentes ligados a ela com a permissão de cada um (`rw` ou `ro`)
+  e quantos arquivos foram alterados. Clicar nas alterações abre o explorador de Git e Worktrees.
+- O terminal de cada agente mostra, no rodapé, a pasta ou as pastas ligadas a ele (ou "sem pasta").
+- O cartão acompanha o tema claro e o escuro. Workspaces antigos continuam funcionando: o cartão ajusta a própria altura, e o "Organizar" já conta com ele.
+
 ## 0.6.3 (26/10/2026)
 - **Editor de notas dividindo a tela:** o editor lateral deixou de cobrir o canvas e agora empurra o canvas para o lado, para você
   ver os dois ao mesmo tempo.
