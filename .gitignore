@@ -1,0 +1,14 @@
+# Instaladores e pacotes NÃO vão para o git (o GitHub recusa arquivo acima de 100 MB; eles sobem como anexo de Release).
+[0-9]*/
+*.exe
+*.zip
+*.AppImage
+*.tar.gz
+*.blockmap
+*.pfx
+*.cer
+senha*
+.cache/
+win-unpacked/
+linux-unpacked/
+builder-debug.yml

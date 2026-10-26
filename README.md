@@ -1,0 +1,116 @@
+<p align="center">
+  <img src="assets/logo.png" alt="Orquestra" width="120" />
+</p>
+
+<h1 align="center">Orquestra</h1>
+
+<p align="center">
+  Canvas visual para orquestrar agentes de código em <b>terminais reais</b>, com mensagens entre eles
+  que passam pela <b>sua aprovação</b>.
+</p>
+
+<p align="center">
+  <i>Projeto pessoal de <a href="https://github.com/">Thallys Cézar</a> · Windows e Linux · em teste (pré-lançamento)</i>
+</p>
+
+---
+
+<!-- TODO: trocar por capturas reais (canvas com Maestro e agentes; fila "Aguardando por mim"; histórico/reprodução).
+     Salvar em assets/ e referenciar aqui. Um GIF curto de 20 s (Maestro delega, você aprova, o agente responde) vale mais que texto. -->
+
+## O que é
+
+Hoje rodar vários agentes de código (Claude Code, Antigravity, OpenCode) significa abrir várias janelas de terminal e
+fazer o papel de mensageiro entre elas. O **Orquestra** junta tudo em um **canvas**: cada agente é um terminal de verdade
+(o mesmo programa que você usaria na linha de comando), e você liga os blocos com **setas** para dizer quem pode falar
+com quem.
+
+Um agente especial, o **Maestro**, recebe o seu pedido e delega tarefas aos outros. Tudo o que um agente manda para
+outro vira uma **mensagem estruturada**, registrada em um banco local e, por padrão, **segurada na fila "Aguardando por
+mim"** até você aprovar, editar ou rejeitar.
+
+## Por que existe
+
+| Problema com vários terminais soltos | O que o Orquestra faz |
+|---|---|
+| Você não vê (nem controla) o que um agente manda para o outro | Cada mensagem vira um registro e pode esperar a sua aprovação |
+| O texto de um agente vira "ordem" para o outro (injeção de prompt entre agentes) | O conteúdo chega por uma ferramenta MCP marcada como **dado**, nunca digitado como prompt |
+| Agentes escrevendo no mesmo repositório se atropelam | Cada agente que escreve ganha seu próprio **git worktree** e uma branch só dele |
+| Um agente em laço infinito | Limites de turnos e de repetição, e um botão de **pausar tudo** |
+
+## Recursos
+
+- **Canvas infinito com andares:** terminais, notas de briefing, pastas, zonas, textos e desenho livre; setas ortogonais,
+  linhas-guia, camadas, modelos prontos e "Organizar" com um clique (Ctrl+Z desfaz).
+- **Terminais reais:** o app roda a CLI do agente num pseudoterminal (ConPTY no Windows), então tudo que a CLI faz
+  continua funcionando.
+- **Três CLIs, no mesmo time:** Claude Code, Antigravity (`agy`) e OpenCode (inclusive com modelos locais via Ollama).
+- **Fila "Aguardando por mim":** aprove, edite ou rejeite mensagens; pedidos de permissão do Claude Code e do OpenCode
+  também aparecem ali. "Permissões Totais" existe, mas é opcional e exige confirmação.
+- **Isolamento por worktree:** o repositório principal não é tocado. **O app nunca faz merge**: quem decide o que entra é você.
+- **Histórico imutável:** mensagens e eventos ficam em SQLite com gatilhos que impedem apagar ou reescrever o passado;
+  há uma aba de **reprodução** para rever o que aconteceu.
+- **Vários workspaces:** abas e painel ao lado; os agentes do workspace anterior continuam rodando em segundo plano.
+- **Controle de contexto:** cada tarefa começa numa conversa nova, com limite de tamanho de mensagem e um selo que mostra
+  quanto texto o agente já recebeu.
+- **Tema claro e escuro**, atalhos de teclado (`F1` lista todos).
+
+## Como funciona (em uma figura)
+
+```
+ Interface (React, sem acesso ao sistema)
+        │  IPC com canais nomeados e validados
+ Processo principal (Node/Electron): broker de mensagens, servidor MCP, terminais, git, SQLite
+        │  HTTP só em 127.0.0.1, com rota e token por agente
+ CLIs dos agentes (claude / agy / opencode), cada uma no seu terminal e no seu worktree
+```
+
+Duas regras de projeto sustentam o resto: **os agentes nunca conversam diretamente** (tudo passa pelo broker) e **o
+conteúdo das mensagens nunca é digitado no terminal** (só uma "cutucada" curta e fixa pede ao agente que leia a caixa
+de entrada). Detalhes em [`docs/DECISOES.md`](docs/DECISOES.md).
+
+## Instalação
+
+Baixe o pacote da sua plataforma na página de **Releases** deste repositório.
+
+| Plataforma | Guia |
+|---|---|
+| Windows 10/11 (64 bits) | [`docs/instalacao-windows.md`](docs/instalacao-windows.md) |
+| Linux (testado só em Ubuntu 24.04 no WSL2) | [`docs/instalacao-linux.md`](docs/instalacao-linux.md) |
+
+**Você precisa de:** Git e pelo menos uma CLI de agente já instalada e logada na sua conta. O Orquestra só orquestra;
+quem trabalha é a CLI, com a **sua** conta e os **seus** limites de uso.
+
+> **Sobre o aviso do Windows:** o instalador é assinado com um certificado **autoassinado** (não de uma empresa), então
+> o Windows mostra "editor desconhecido" até você confiar nele (o guia explica, e só faça se confiar em mim). Um certificado
+> comercial resolveria, mas é pago.
+
+## Segurança
+
+- Servidor MCP **só em `127.0.0.1`**, uma porta, com token aleatório por agente (revogado quando o processo termina);
+  pedidos de navegador (`Origin`) são recusados.
+- Interface sem `nodeIntegration`, com `contextIsolation` ligado e canais IPC validados.
+- Ambiente mínimo para cada agente (sem variáveis de credenciais herdadas).
+- **Use só repositórios de teste.** O projeto ainda está em teste e agentes de código executam comandos de verdade.
+
+## Limitações conhecidas (honestas)
+
+- Em teste: usado e verificado principalmente no **Windows**. No Linux, só dentro do WSL2; instalação em máquina limpa
+  ainda não foi verificada.
+- **Docker por agente** (isolamento mais forte que o worktree) foi adiado.
+- O `agy` não expõe pedidos de permissão para a fila: as permissões dele ficam no próprio terminal.
+- Modelos locais pequenos (3B) abrem e recebem a mensagem, mas não usam bem as ferramentas MCP.
+- Certificado autoassinado (veja acima). Sem atualização automática: atualizar é rodar o instalador novo por cima.
+- Sem licença definida por enquanto: o código-fonte **ainda não é aberto**.
+
+## Status e roteiro
+
+Pré-lançamento. O histórico de versões está no [`CHANGELOG.md`](CHANGELOG.md).
+Próximos passos prováveis: logo definitiva, capturas e demonstração em vídeo, instalação em máquina limpa,
+Docker por agente, e a decisão de abrir o código (com licença).
+
+## Feito por
+
+Ideia, desenho e direção: **Thallys Cézar**. O código foi escrito com ajuda de agentes de IA (Claude Code e outros),
+sob revisão e teste humanos; o próprio Orquestra nasceu dessa forma de trabalhar. As decisões de projeto estão
+registradas em [`docs/DECISOES.md`](docs/DECISOES.md).
