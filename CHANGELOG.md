@@ -3,6 +3,12 @@
 Formato: o que muda para quem usa. Datas só onde o histórico do código as confirma (o repositório do código começa em 24/10/2026;
 as versões 0.1 a 0.3 são anteriores a ele).
 
+## 0.8.4 (26/10/2026)
+- **"Criar Terminal" espera os modelos carregarem:** a lista de modelos do Antigravity e do OpenCode vem da própria CLI e pode demorar
+  alguns segundos. Nesse tempo o botão ficava ativo e, ao clicar, o terminal era criado sem modelo e dava problema. Agora o botão fica
+  desativado ("Carregando modelos…") até a lista chegar. Vale também para os outros formulários com escolha de modelo.
+- A lista de modelos ficou mais rápida: abrir o seletor de novo reaproveita a lista já lida e atualiza em segundo plano, em vez de esperar tudo de novo.
+
 ## 0.8.3 (26/10/2026)
 - **Antigravity (`agy`) antigo volta a abrir o terminal:** com versões mais antigas do `agy`, o terminal abria só com a lista de opções dele
   e encerrava ("flags provided but not defined: -effort"). Agora o app confere quais opções a CLI instalada aceita e só envia o esforço de
