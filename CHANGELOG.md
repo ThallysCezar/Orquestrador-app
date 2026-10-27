@@ -3,6 +3,13 @@
 Formato: o que muda para quem usa. Datas só onde o histórico do código as confirma (o repositório do código começa em 24/10/2026;
 as versões 0.1 a 0.3 são anteriores a ele).
 
+## 0.8.1 (26/10/2026)
+- **Setas sem diagonais:** ao mover um bloco, as setas ligadas a ele voltam ao caminho automático (antes, os pontos de desvio que você tinha
+  posto ficavam no lugar antigo e a seta virava uma diagonal esquisita). Setas já salvas com pontos antigos também passam a ser desenhadas
+  só com linhas retas.
+- **Menu de andares reformulado:** cada andar aparece numa lista com o número, o andar atual marcado, ações de subir, descer, renomear e
+  excluir agrupadas, e o botão "+ Novo andar" no fim. Funciona nos temas claro e escuro (o botão "+ Novo andar" estava difícil de ler no tema claro).
+
 ## 0.8.0 (26/10/2026)
 - **Pasta em formato de cartão:** cada pasta do canvas agora mostra o tipo (repositório Git, documentos ou Maestro), a subpasta de saída,
   o **caminho real no disco** (com botões para copiar e abrir a pasta), os agentes ligados a ela com a permissão de cada um (`rw` ou `ro`)
