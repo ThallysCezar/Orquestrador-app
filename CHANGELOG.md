@@ -3,6 +3,12 @@
 Formato: o que muda para quem usa. Datas só onde o histórico do código as confirma (o repositório do código começa em 24/10/2026;
 as versões 0.1 a 0.3 são anteriores a ele).
 
+## 0.8.2 (26/10/2026)
+- **Linux: o AppImage voltou a abrir.** Os AppImages das versões 0.6.0 a 0.8.1 saíram sem um componente necessário e fechavam na
+  abertura com o erro "Cannot find module 'electron-updater'". Quem baixou o Linux dessas versões deve baixar esta. O Windows não foi afetado.
+- **Setas:** arrastar um trecho de uma seta passa a funcionar também quando o mouse sai de cima dela; um clique na seta só a seleciona,
+  e o menu fica no botão direito. O destaque da ferramenta ativa na barra de ferramentas ficou igual ao da barra de andares.
+
 ## 0.8.1 (26/10/2026)
 - **Setas sem diagonais:** ao mover um bloco, as setas ligadas a ele voltam ao caminho automático (antes, os pontos de desvio que você tinha
   posto ficavam no lugar antigo e a seta virava uma diagonal esquisita). Setas já salvas com pontos antigos também passam a ser desenhadas
