@@ -3,6 +3,11 @@
 Formato: o que muda para quem usa. Datas só onde o histórico do código as confirma (o repositório do código começa em 24/10/2026;
 as versões 0.1 a 0.3 são anteriores a ele).
 
+## 0.8.3 (26/10/2026)
+- **Antigravity (`agy`) antigo volta a abrir o terminal:** com versões mais antigas do `agy`, o terminal abria só com a lista de opções dele
+  e encerrava ("flags provided but not defined: -effort"). Agora o app confere quais opções a CLI instalada aceita e só envia o esforço de
+  raciocínio se ela tiver essa opção. Quando ela não tem, o terminal mostra um aviso e segue sem ele. Para usar o esforço, atualize a CLI (`agy update`).
+
 ## 0.8.2 (26/10/2026)
 - **Linux: o AppImage voltou a abrir.** Os AppImages das versões 0.6.0 a 0.8.1 saíram sem um componente necessário e fechavam na
   abertura com o erro "Cannot find module 'electron-updater'". Quem baixou o Linux dessas versões deve baixar esta. O Windows não foi afetado.
