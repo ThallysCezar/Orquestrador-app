@@ -3,6 +3,14 @@
 Formato: o que muda para quem usa. Datas só onde o histórico do código as confirma (o repositório do código começa em 24/10/2026;
 as versões 0.1 a 0.3 são anteriores a ele).
 
+## 0.9.1 (27/10/2026)
+- **Réguas de alinhamento melhores:** ao arrastar um bloco, ou vários selecionados de uma vez, o conjunto encaixa nos outros pela borda
+  (inclusive lado a lado) e pelo meio, e todas as réguas que coincidem aparecem juntas. O meio de uma zona não atrai, as bordas dela sim.
+- **Setas que contornam os blocos:** a seta automática que passaria por cima de um bloco agora dá a volta por ele, com uma folga.
+- **Seta ajustada por você é sua:** mover um bloco não apaga mais os pontos que você ajustou na seta. Só o **Organizar** os descarta.
+- **Permissões Totais também no Antigravity:** com a opção ligada no workspace, o `agy` inicia com `--dangerously-skip-permissions`
+  (por sessão; nenhuma configuração do Antigravity é alterada). Ainda não conferido numa execução real com login.
+
 ## 0.9.0 (27/10/2026)
 - **Ctrl+Z e Ctrl+Shift+Z (ou Ctrl+Y) funcionam em tudo:** criar, mover, apagar, ligar, redimensionar e desenhar podem ser desfeitos e
   refeitos (até 100 passos). Um arrasto conta como um passo só. O zoom, a posição da tela e as configurações do workspace não entram
