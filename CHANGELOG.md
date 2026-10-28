@@ -3,6 +3,20 @@
 Formato: o que muda para quem usa. Datas só onde o histórico do código as confirma (o repositório do código começa em 24/10/2026;
 as versões 0.1 a 0.3 são anteriores a ele).
 
+## 0.9.0 (27/10/2026)
+- **Ctrl+Z e Ctrl+Shift+Z (ou Ctrl+Y) funcionam em tudo:** criar, mover, apagar, ligar, redimensionar e desenhar podem ser desfeitos e
+  refeitos (até 100 passos). Um arrasto conta como um passo só. O zoom, a posição da tela e as configurações do workspace não entram
+  nisso, então desfazer nunca liga nem desliga uma permissão. Desfazer a exclusão de um agente devolve o bloco, mas o worktree dele
+  já tinha sido descartado (ele ganha um novo ao iniciar).
+- **Desenhos editáveis:** clique num desenho para selecioná-lo; arraste para mover (Shift trava num eixo); use as alças para
+  redimensionar (Shift no canto mantém a proporção); linhas e setas têm as duas pontas editáveis. **Delete** apaga, e a caixa de
+  seleção do canvas também pega desenhos.
+- **Linha reta de verdade:** ao desenhar ou ajustar uma linha ou seta, perto da horizontal ou da vertical ela encaixa sozinha (sem a
+  mão ir para o lado); com **Shift** o ângulo trava em passos de 15 graus. Shift em retângulo, losango e círculo faz quadrado e círculo perfeitos.
+- **Seleção por caixa mais precisa:** só entra o que está **inteiro** dentro da caixa. Encostar a ponta num terminal não seleciona mais a zona dele.
+- **Editor de notas:** sair com alterações (pelo X, por Esc ou clicando fora) pergunta **Salvar, Descartar ou Continuar editando**. Sem
+  alterações, fecha direto.
+
 ## 0.8.4 (26/10/2026)
 - **"Criar Terminal" espera os modelos carregarem:** a lista de modelos do Antigravity e do OpenCode vem da própria CLI e pode demorar
   alguns segundos. Nesse tempo o botão ficava ativo e, ao clicar, o terminal era criado sem modelo e dava problema. Agora o botão fica
