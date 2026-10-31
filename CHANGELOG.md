@@ -3,6 +3,23 @@
 Formato: o que muda para quem usa. Datas só onde o histórico do código as confirma (o repositório do código começa em 24/10/2026;
 as versões 0.1 a 0.3 são anteriores a ele).
 
+## 0.9.4 (30/10/2026)
+As versões 0.9.2 e 0.9.3 não foram publicadas; esta reúne tudo o que mudou desde a 0.9.1.
+- **Aviso "Esperando você":** quando um agente termina a vez com uma pergunta em texto (por exemplo, o Maestro perguntando "Você aprova este
+  plano?"), aparece um cartão na fila **Aguardando por mim**, com as últimas linhas do terminal, notificação do sistema e número no ícone.
+  **Abrir terminal** leva ao agente; **Dispensar** tira o aviso. Ele some sozinho quando você responde ou o agente volta a trabalhar.
+  O texto do cartão vem da tela do terminal, então também funciona com TUIs de tela cheia como o OpenCode.
+- **Item novo na fila avisa dentro do app:** se a fila estava recolhida ela reabre e pisca, e aparece um aviso rápido. Antes só tocava a
+  notificação do Windows, e só com o app em segundo plano.
+- **O que mudou, por agente:** botão "O que mudou" no cartão para ver os arquivos alterados pelo agente, com prévia de HTML, Markdown e PDF
+  (somente leitura, em um protocolo isolado).
+- **Copiar e colar entre workspaces:** Ctrl+C num workspace e Ctrl+V em outro agora funciona, e as setas entre os blocos copiados vão junto.
+- **Menu da aba (clique direito):** "Excluir workspace…" e "Duplicar…" não faziam nada porque o menu fechava antes do clique. Corrigido.
+- **Abas no lugar:** clicar numa aba não a joga mais para o começo nem embaralha as outras.
+- **Seta ajustada à mão fica onde você soltou:** ao arrastar a ponta de uma seta para outro lado do bloco, ela não volta mais para o lado antigo.
+- **Terminais sempre vivos:** todo terminal em execução continua atualizando em qualquer zoom do canvas.
+- Ainda não conferido com o `agy` e o `claude` reais: o painel "O que mudou" e o aviso dentro do app com a janela em foco.
+
 ## 0.9.1 (27/10/2026)
 - **Réguas de alinhamento melhores:** ao arrastar um bloco, ou vários selecionados de uma vez, o conjunto encaixa nos outros pela borda
   (inclusive lado a lado) e pelo meio, e todas as réguas que coincidem aparecem juntas. O meio de uma zona não atrai, as bordas dela sim.
