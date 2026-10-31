@@ -3,6 +3,17 @@
 Formato: o que muda para quem usa. Datas só onde o histórico do código as confirma (o repositório do código começa em 24/10/2026;
 as versões 0.1 a 0.3 são anteriores a ele).
 
+## 0.9.6 (31/10/2026)
+- **Fluxos em JSON, para copiar, colar e pedir a uma IA:** um pedaço do canvas (blocos e setas) vira um texto JSON que você pode colar em outro
+  workspace ou entregar a uma IA para criar, corrigir ou melhorar um fluxo. Na paleta de comandos (`Ctrl+K`): **Copiar seleção como fluxo (JSON)**,
+  **Colar fluxo (JSON)** e **Copiar guia do formato de fluxo para IA** (a explicação do formato, com exemplo). O menu de clique direito do canvas
+  vazio também tem **Colar fluxo** e **Copiar guia**.
+- **Colar é seguro:** o texto colado é tratado como não confiável. Caminhos de pasta não vêm junto (você escolhe a pasta de cada bloco depois), mensagens
+  entre agentes nunca são aprovadas sozinhas por um JSON colado, e só pode haver um Maestro. Se o JSON tiver erro, o app mostra o que corrigir e o botão
+  **Copiar erros** já monta o pedido para você devolver à IA.
+- O guia do formato também está em `docs/formato-de-fluxo.md` no código do app.
+- Ainda não conferido com uma IA de verdade gerando um fluxo no app instalado.
+
 ## 0.9.5 (31/10/2026)
 - **O X da aba fecha a aba de verdade:** antes ele só trocava de aba. Agora a aba sai da barra, o workspace continua na lista do menu
   **Orquestra** e os agentes dele seguem rodando. Abrir o workspace de novo pelo menu traz a aba de volta. A última aba aberta não tem X.
