@@ -3,6 +3,16 @@
 Formato: o que muda para quem usa. Datas só onde o histórico do código as confirma (o repositório do código começa em 24/10/2026;
 as versões 0.1 a 0.3 são anteriores a ele).
 
+## 0.9.7 (31/10/2026)
+- **Funciona com o OpenCode 2.x:** quem atualizou o OpenCode para a versão 2 via `@opencode/cli` (comando `opencode --version` mostra `v2.x`) via o erro
+  `ECONNREFUSED` no servidor MCP "orquestra" ou "`-m` não é reconhecido" ao iniciar o agente pelo bloco do Orquestra. Os dois estão corrigidos:
+  cada terminal OpenCode 2.x agora roda com um servidor próprio (a 2.x compartilhava um serviço em segundo plano que guardava a porta e o token da
+  primeira execução) e o modelo escolhido no bloco passa a valer. A versão 1.x segue como antes.
+- **Permissões do OpenCode 2.x na fila:** os pedidos de `Bash`, edição e web, e também o acesso a pastas fora da do agente, aparecem em "Aguardando
+  por mim", e o aviso de "trabalhando" e "ocioso" do terminal funciona.
+- Fora desta versão: os logins de provedores com chave (só os modelos gratuitos `opencode/*` foram testados na 2.x; para os outros, use `opencode auth login`
+  dentro do terminal do agente) e o Ollama local na 2.x.
+
 ## 0.9.6 (31/10/2026)
 - **Fluxos em JSON, para copiar, colar e pedir a uma IA:** um pedaço do canvas (blocos e setas) vira um texto JSON que você pode colar em outro
   workspace ou entregar a uma IA para criar, corrigir ou melhorar um fluxo. Na paleta de comandos (`Ctrl+K`): **Copiar seleção como fluxo (JSON)**,
