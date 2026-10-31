@@ -3,6 +3,10 @@
 Formato: o que muda para quem usa. Datas só onde o histórico do código as confirma (o repositório do código começa em 24/10/2026;
 as versões 0.1 a 0.3 são anteriores a ele).
 
+## 0.9.5 (31/10/2026)
+- **O X da aba fecha a aba de verdade:** antes ele só trocava de aba. Agora a aba sai da barra, o workspace continua na lista do menu
+  **Orquestra** e os agentes dele seguem rodando. Abrir o workspace de novo pelo menu traz a aba de volta. A última aba aberta não tem X.
+
 ## 0.9.4 (30/10/2026)
 As versões 0.9.2 e 0.9.3 não foram publicadas; esta reúne tudo o que mudou desde a 0.9.1.
 - **Aviso "Esperando você":** quando um agente termina a vez com uma pergunta em texto (por exemplo, o Maestro perguntando "Você aprova este
