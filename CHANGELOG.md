@@ -3,6 +3,20 @@
 Formato: o que muda para quem usa. Datas só onde o histórico do código as confirma (o repositório do código começa em 24/10/2026;
 as versões 0.1 a 0.3 são anteriores a ele).
 
+## 0.10.0 (31/10/2026)
+- **Ver resultado do Maestro:** quando o Maestro devolve a resposta, o botão **Ver resultado** (no cartão "Esperando você" e no bloco dele) abre o
+  resultado final da rodada: o que os agentes acionados deixaram nas pastas, desde o seu pedido. HTML, Markdown e PDF abrem com pré-visualização;
+  código mostra as diferenças (ou o conteúdo, quando o arquivo é novo). Cada arquivo aparece uma vez, no estado final, com quem o fez. Os arquivos
+  internos do app (instruções e configuração dos agentes) ficam de fora. Fechar o app esquece a rodada.
+- **"O que mudou" também mostra código:** no painel de um agente, clicar num arquivo de código mostra as diferenças do turno.
+- **Agentes nesta máquina:** uma tela mostra quais CLIs (Claude Code, Antigravity, OpenCode) estão instaladas e a versão de cada uma. As que não estão
+  instaladas aparecem indisponíveis ao criar um agente, com o comando de instalação.
+- **Mapa de conexões:** um resumo de quem fala com quem em cada andar e de quem o Maestro enxerga. Clicar num agente leva até ele.
+- **O Maestro explica quem não vê:** quando um agente fica fora do alcance (sem seta, outro andar, terminal comum), o Maestro diz o motivo.
+- **Avisos do Antigravity (agy):** o pedido de confirmação de comando no terminal gera um aviso e um cartão com o comando, mesmo depois de uma pausa
+  longa. O botão **Aceitar (Enter)** do cartão confirma a opção padrão sem abrir o terminal (no agy, isso é "Yes, run command").
+- Não conferido no app instalado: a rodada completa do "Ver resultado" com agentes de verdade (testado com git real e no navegador).
+
 ## 0.9.7 (31/10/2026)
 - **Funciona com o OpenCode 2.x:** quem atualizou o OpenCode para a versão 2 via `@opencode/cli` (comando `opencode --version` mostra `v2.x`) via o erro
   `ECONNREFUSED` no servidor MCP "orquestra" ou "`-m` não é reconhecido" ao iniciar o agente pelo bloco do Orquestra. Os dois estão corrigidos:
