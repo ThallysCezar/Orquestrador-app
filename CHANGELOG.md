@@ -3,6 +3,14 @@
 Formato: o que muda para quem usa. Datas só onde o histórico do código as confirma (o repositório do código começa em 24/10/2026;
 as versões 0.1 a 0.3 são anteriores a ele).
 
+## 0.10.1 (01/11/2026)
+- **Ver quem é o Maestro de longe:** o bloco do Maestro tem uma batuta antes do nome e a borda roxa. Ao clicar no bloco, o painel mostra a
+  etiqueta **Maestro**.
+- **Trocar o Maestro com um clique:** clique com o botão direito em qualquer agente (ou abra o painel do bloco) e escolha **Tornar Maestro**.
+  Continua havendo um só Maestro por workspace: o anterior volta a ser um agente comum. Um terminal comum não pode ser o Maestro. Se o novo ou
+  o antigo estiver rodando, o app oferece reiniciar os dois para o papel novo valer (a conversa continua).
+- Não conferido no app instalado: o reinício dos dois terminais com agentes rodando de verdade.
+
 ## 0.10.0 (31/10/2026)
 - **Ver resultado do Maestro:** quando o Maestro devolve a resposta, o botão **Ver resultado** (no cartão "Esperando você" e no bloco dele) abre o
   resultado final da rodada: o que os agentes acionados deixaram nas pastas, desde o seu pedido. HTML, Markdown e PDF abrem com pré-visualização;
