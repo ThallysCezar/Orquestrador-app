@@ -3,6 +3,13 @@
 Formato: o que muda para quem usa. Datas só onde o histórico do código as confirma (o repositório do código começa em 24/10/2026;
 as versões 0.1 a 0.3 são anteriores a ele).
 
+## 0.10.2 (04/11/2026)
+- **Linux: dá para adicionar pastas.** O bloco de pasta e as pastas permitidas do workspace só aceitavam caminho do Windows (`C:\...`), e no
+  Linux um caminho como `/home/voce/projeto` dava "Use um caminho completo". Agora os dois formatos valem, e os exemplos mostram o formato
+  do seu sistema.
+- **Linux: a janela mostra o ícone do Orquestra** na barra de tarefas, no lugar do ícone genérico.
+- Não conferido numa máquina Linux com o app instalado.
+
 ## 0.10.1 (01/11/2026)
 - **Ver quem é o Maestro de longe:** o bloco do Maestro tem uma batuta antes do nome e a borda roxa. Ao clicar no bloco, o painel mostra a
   etiqueta **Maestro**.
