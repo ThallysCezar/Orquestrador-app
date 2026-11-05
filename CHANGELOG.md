@@ -3,6 +3,20 @@
 Formato: o que muda para quem usa. Datas só onde o histórico do código as confirma (o repositório do código começa em 24/10/2026;
 as versões 0.1 a 0.3 são anteriores a ele).
 
+## 0.10.3 (05/11/2026)
+- **OpenCode avisa quando pede permissão.** Se o pedido de permissão não chegasse à fila "Aguardando por mim" (um amigo no Linux viu o OpenCode
+  travar esperando, sem nenhum aviso), o app agora reconhece o diálogo no terminal e mostra o cartão "esperando você" com o comando e a notificação.
+  Se o pedido já chegou à fila, não aparece cartão repetido.
+- **OpenCode: sem "aba nova" a cada tarefa.** Com "conversa nova por tarefa" ligada, o app deixa de fechar e reabrir o OpenCode: ele limpa a conversa
+  na mesma janela do terminal (`/clear`).
+- **Permissões Totais por terminal.** Além da opção do workspace, cada terminal tem a sua (ao criar o agente e no painel do bloco). Ela vale mais que
+  a do workspace. No Antigravity e no OpenCode vale ao abrir o terminal; ao ligar a opção do workspace, o app oferece reiniciar os terminais abertos.
+- **"Conversa nova por tarefa" vem desligada por padrão.** Os agentes ficam abertos entre as tarefas (o contexto cresce); dá para ligar nas
+  Configurações do workspace.
+- **Erro de atualização mais claro.** Quando a verificação da assinatura do instalador falha, a mensagem diz se foi o PowerShell que travou ou se o
+  certificado não confere, e mostra um detalhe técnico. O erro real também fica gravado em `updater.log` (pasta de dados do Orquestra).
+- Não conferido: o aviso do OpenCode e o `/clear` num Linux de verdade (o texto do diálogo foi conferido no OpenCode 2.2.5 do Windows).
+
 ## 0.10.2 (04/11/2026)
 - **Linux: dá para adicionar pastas.** O bloco de pasta e as pastas permitidas do workspace só aceitavam caminho do Windows (`C:\...`), e no
   Linux um caminho como `/home/voce/projeto` dava "Use um caminho completo". Agora os dois formatos valem, e os exemplos mostram o formato
