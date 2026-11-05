@@ -3,6 +3,13 @@
 Formato: o que muda para quem usa. Datas só onde o histórico do código as confirma (o repositório do código começa em 24/10/2026;
 as versões 0.1 a 0.3 são anteriores a ele).
 
+## 0.10.4 (05/11/2026)
+- **Maestro para projetos grandes.** O protocolo do Maestro ganhou um modo em que o plano e o andamento ficam em arquivos (`plano/00-visao.md`,
+  uma `plano/NN-etapa.md` por etapa e `plano/estado.md`), e não só na conversa. Cada etapa é despachada citando apenas o caminho do arquivo, e o
+  Maestro mantém o `estado.md` em dia (inclusive as suas preferências). Assim dá para usar **Começar do zero** no Maestro quando o contexto
+  enche: ele lê o `estado.md` e continua de onde parou, sem reenviar uma conversa enorme a cada prompt.
+- Vale para Maestros que forem abertos depois da atualização (o arquivo de instruções é regravado na partida). Não conferido com um Maestro real.
+
 ## 0.10.3 (05/11/2026)
 - **OpenCode avisa quando pede permissão.** Se o pedido de permissão não chegasse à fila "Aguardando por mim" (um amigo no Linux viu o OpenCode
   travar esperando, sem nenhum aviso), o app agora reconhece o diálogo no terminal e mostra o cartão "esperando você" com o comando e a notificação.
