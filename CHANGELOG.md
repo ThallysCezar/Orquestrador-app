@@ -3,6 +3,17 @@
 Formato: o que muda para quem usa. Datas só onde o histórico do código as confirma (o repositório do código começa em 24/10/2026;
 as versões 0.1 a 0.3 são anteriores a ele).
 
+## 0.10.5 (06/11/2026)
+- **Shift+Enter dá nova linha nos terminais.** Antes ele enviava a mensagem (o terminal do app não distinguia Shift+Enter de Enter). Agora
+  você escreve várias linhas, com listas e exemplos, e envia só com Enter. Conferido no Claude Code, no OpenCode e no Antigravity (`agy`).
+- **Colar imagem no terminal.** Com uma imagem na área de transferência (um print, por exemplo), Ctrl+V grava um PNG na pasta do workspace
+  (`.orquestra/colados`, guarda as 30 mais recentes) e coloca o caminho no prompt. O Claude Code e o OpenCode mostram como anexo; o `agy` lê o
+  arquivo pelo caminho.
+- **Setas animadas.** Enquanto um agente trabalha, pontos correm pela seta que o liga ao outro bloco, no sentido do fluxo (a tarefa indo,
+  ou o agente escrevendo/lendo a pasta). Somem com "reduzir movimento" ligado no sistema.
+- **Maestro para projetos grandes** (o texto já vinha na 0.10.4): só vale para Maestros abertos depois da atualização.
+- Não conferido: o Linux com as CLIs reais (só com um terminal de teste); a leitura da imagem pelo Claude Code e pelo OpenCode depois de enviar.
+
 ## 0.10.4 (05/11/2026)
 - **Maestro para projetos grandes.** O protocolo do Maestro ganhou um modo em que o plano e o andamento ficam em arquivos (`plano/00-visao.md`,
   uma `plano/NN-etapa.md` por etapa e `plano/estado.md`), e não só na conversa. Cada etapa é despachada citando apenas o caminho do arquivo, e o
