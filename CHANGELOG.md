@@ -3,6 +3,15 @@
 Formato: o que muda para quem usa. Datas só onde o histórico do código as confirma (o repositório do código começa em 24/10/2026;
 as versões 0.1 a 0.3 são anteriores a ele).
 
+## 0.10.6 (14/11/2026)
+- **O Maestro pode pedir agentes novos.** Quando falta alguém para o trabalho, o Maestro usa a ferramenta `request_agent`: ela **não cria
+  nada**, só aparece um cartão "Novo agente" em "Aguardando por mim", com a CLI, as pastas e o briefing. Ao clicar em **Criar agente**, o app cria
+  o terminal, a nota de briefing e as setas e abre o terminal; **Rejeitar** avisa o Maestro. As pastas só podem ser as que o próprio Maestro
+  enxerga (e nunca com mais escrita do que ele tem), no máximo 12 agentes por workspace e 5 pedidos esperando. Nem "Aprovar todas" nem
+  "Permissões Totais" aprovam esse pedido.
+- Vale para Maestros abertos depois da atualização. O pedido não é gravado em disco: se o app fechar antes da sua decisão, o Maestro pede de novo.
+- Não conferido com um Maestro de verdade numa CLI (a tela foi conferida no modo web).
+
 ## 0.10.5 (06/11/2026)
 - **Shift+Enter dá nova linha nos terminais.** Antes ele enviava a mensagem (o terminal do app não distinguia Shift+Enter de Enter). Agora
   você escreve várias linhas, com listas e exemplos, e envia só com Enter. Conferido no Claude Code, no OpenCode e no Antigravity (`agy`).
